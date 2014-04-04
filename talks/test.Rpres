@@ -3,6 +3,43 @@ test
 author: Ben Best
 date: 2014-02-27
 
+Outline
+====
+
+
+Getting Started with Git
+====
+
+
+
+Rprofile options
+====
+
+Set your "mode" to offline or on network.
+
+```{r, eval=FALSE}
+cat(".Rprofile: Setting UK repositoryn")
+r = getOption("repos") # hard code the UK repo for CRAN
+r["CRAN"] = "http://cran.uk.r-project.org"
+options(repos = r)
+rm(r)
+```
+
+
+The grammar of data manipulation
+====
+Using `dplyr`
+
+```{r}
+library(dplyr)
+#read.csv('')
+```
+
+Slides in RStudio
+====
+
+later [http://slidify.org/](slidify)
+
 First Slide
 ========================================================
 
@@ -26,3 +63,7 @@ Slide With Plot
 ```{r, echo=FALSE}
 plot(cars)
 ```
+
+
+
+

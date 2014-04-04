@@ -7,9 +7,15 @@ Outline
 ====
 
 
+Why Git?
+====
+* CSV searching & 
+* README
+
 Getting Started with Git
 ====
 
+![github signup]('2014-02-28_OHI_tools-figure/github_signup.png')
 
 
 Rprofile options
@@ -17,8 +23,7 @@ Rprofile options
 
 Set your "mode" to offline or on network.
 
-
-```r
+```{r, eval=FALSE}
 cat(".Rprofile: Setting UK repositoryn")
 r = getOption("repos") # hard code the UK repo for CRAN
 r["CRAN"] = "http://cran.uk.r-project.org"
@@ -27,17 +32,14 @@ rm(r)
 ```
 
 
-
 The grammar of data manipulation
 ====
 Using `dplyr`
 
-
-```r
+```{r}
 library(dplyr)
 #read.csv('')
 ```
-
 
 Slides in RStudio
 ====
@@ -57,27 +59,16 @@ For more details on authoring R presentations click the
 Slide With Code
 ========================================================
 
-
-```r
+```{r}
 summary(cars)
 ```
-
-```
-     speed           dist    
- Min.   : 4.0   Min.   :  2  
- 1st Qu.:12.0   1st Qu.: 26  
- Median :15.0   Median : 36  
- Mean   :15.4   Mean   : 43  
- 3rd Qu.:19.0   3rd Qu.: 56  
- Max.   :25.0   Max.   :120  
-```
-
 
 Slide With Plot
 ========================================================
 
-![plot of chunk unnamed-chunk-4](test-figure/unnamed-chunk-4.png) 
-
+```{r, echo=FALSE}
+plot(cars)
+```
 
 
 
