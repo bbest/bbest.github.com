@@ -1,6 +1,6 @@
 productivity with rstudio
 ====
-author: ben best (bbest@nceas.ucsb.edu)
+author: ben best <bbest@nceas.ucsb.edu>
 date: 2014-04-03 at Westmont College
 
 overview
@@ -124,11 +124,11 @@ incremental: true
 
 * **inline**
 
-```
-The Arithmetic mean is equal to $\frac{1}{n} \sum_{i=i}^{n} x_{i}$, or the summation of n numbers divided by n.
-```
+  ```
+  The Arithmetic mean is equal to $\frac{1}{n} \sum_{i=i}^{n} x_{i}$, or the summation of n numbers divided by n.
+  ```
 
-The Arithmetic mean is equal to $\frac{1}{n} \sum_{i=i}^{n} x_{i}$, or the summation of n numbers divided by n.
+  The Arithmetic mean is equal to $\frac{1}{n} \sum_{i=i}^{n} x_{i}$, or the summation of n numbers divided by n.
 
 * **chunked**
 
@@ -203,14 +203,15 @@ github process (2)
 ====
 
 
-|     | `github.com/ohi-science/[repo]` (web)  | `github.com/[user]/[repo]` (web) |   `~/github/[repo]` (local) |
+|     | `github.com/[org]/[repo]` (org web)  | `github.com/[user]/[repo]` (user web) |   `~/github/[repo]` (user local) |
 | --- |------------------------  | -------------------------- | -------------- |
 | -> |                          | -> [fork](https://help.github.com/articles/fork-a-repo)            | -> [clone](https://help.github.com/articles/fetching-a-remote)    |
 | <- |  [merge pull request](https://help.github.com/articles/merging-a-pull-request) {admin} <-                           | <- [pull request](Fork & Pull Model) | <- [push](https://github.com/OHI-Science/ohiprep/wiki/Setup#rstudio), <-> [commit](https://github.com/OHI-Science/ohiprep/wiki/Setup#rstudio) |
 
 where:
-* `[repo]` is one of OHI-Science repositories: ohicore, ohiprep, etc.
-* `[user]` is your GitHub username
+* `[org]` is an organization (eg ohi-science)
+* `[repo]` is a repository in the orgranization (eg ohicore, ohiprep, etc.)
+* `[user]` is your github username
 
 see also:
 * [GitHub flow in the browser](https://help.github.com/articles/github-flow-in-the-browser)
@@ -244,15 +245,6 @@ more info
  * **github**: https://www.rstudio.com/ide/docs/version_control/overview
  
  * this presentation
-   * http://rpubs.com/bdbest/rprod
-   * http://bbest.github.io/talks/2014-04-03_R-productivity
-   
- Ben Best <bbest@nceas.ucsb.edu>
-   
-
-Aside: Presentation
-========================================================
-
-This presentation was quickly and easily authored in RStudio using Markdown in its R presentation format. Then present in full screen.
-
-See: [RStudio -- Authoring R Presentations](http://www.rstudio.com/ide/docs/presentations/overview)
+   * rpub: http://rpubs.com/bdbest/rprod
+   * raw: http://github.com/bbest/bbest.github.com/tree/master/talks/2014-04-03_R-productivity/index.Rpres
+   * rendered: http://bbest.github.io/talks/2014-04-03_R-productivity

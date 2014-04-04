@@ -794,7 +794,7 @@ hljs.initHighlightingOnLoad();
   <div class="slides">
 
 <section data-state="section" data-transition="linear" data-transition-speed="default">
-<h1>productivity with rstudio</h1><p>ben best (bbest@nceas.ucsb.edu)<br/>2014-04-03 at Westmont College</p>
+<h1>productivity with rstudio</h1><p>ben best &lt;bbest@nceas.ucsb.edu&gt;<br/>2014-04-03 at Westmont College</p>
 
 <div class="slideContent" >
 
@@ -949,16 +949,13 @@ Batting %.%
 <h3>embedding equations</h3>
 <div class="slideContent" >
 <ul>
-<li class="fragment"><strong>inline</strong></li>
-</ul>
+<li class="fragment"><p><strong>inline</strong></p>
 
-<pre class="fragment"><code>The Arithmetic mean is equal to $\frac{1}{n} \sum_{i=i}^{n} x_{i}$, or the summation of n numbers divided by n.
+<pre class="fragment"><code>The Arithmetic mean is equal to \( \frac{1}{n} \sum_{i=i}^{n} x_{i} \), or the summation of n numbers divided by n.
 </code></pre>
 
-<p>The Arithmetic mean is equal to \( \frac{1}{n} \sum_{i=i}^{n} x_{i} \), or the summation of n numbers divided by n.</p>
-
-<ul>
-<li class="fragment"><strong>chunked</strong></li>
+<p class="fragment">The Arithmetic mean is equal to \( \frac{1}{n} \sum_{i=i}^{n} x_{i} \), or the summation of n numbers divided by n.</p></li>
+<li class="fragment"><p class="fragment"><strong>chunked</strong></p></li>
 </ul>
 
 <pre class="fragment"><code>$$
@@ -1040,9 +1037,9 @@ $$
 <table><thead>
 <tr>
 <th></th>
-<th><code>github.com/ohi-science/[repo]</code> (web)</th>
-<th><code>github.com/[user]/[repo]</code> (web)</th>
-<th><code>~/github/[repo]</code> (local)</th>
+<th><code>github.com/[org]/[repo]</code> (org web)</th>
+<th><code>github.com/[user]/[repo]</code> (user web)</th>
+<th><code>~/github/[repo]</code> (user local)</th>
 </tr>
 </thead><tbody>
 <tr>
@@ -1062,8 +1059,9 @@ $$
 <p>where:</p>
 
 <ul>
-<li><code>[repo]</code> is one of OHI-Science repositories: ohicore, ohiprep, etc.</li>
-<li><code>[user]</code> is your GitHub username</li>
+<li><code>[org]</code> is an organization (eg ohi-science)</li>
+<li><code>[repo]</code> is a repository in the orgranization (eg ohicore, ohiprep, etc.)</li>
+<li><code>[user]</code> is your github username</li>
 </ul>
 
 <p>see also:</p>
@@ -1110,22 +1108,11 @@ $$
 <li><p>this presentation</p>
 
 <ul>
-<li><a href="http://rpubs.com/bdbest/rprod">http://rpubs.com/bdbest/rprod</a></li>
-<li><a href="http://bbest.github.io/talks/2014-04-03_R-productivity">http://bbest.github.io/talks/2014-04-03_R-productivity</a></li>
+<li>rpub: <a href="http://rpubs.com/bdbest/rprod">http://rpubs.com/bdbest/rprod</a></li>
+<li>raw: <a href="http://github.com/bbest/bbest.github.com/tree/master/talks/2014-04-03_R-productivity/index.Rpres">http://github.com/bbest/bbest.github.com/tree/master/talks/2014-04-03_R-productivity/index.Rpres</a></li>
+<li>rendered: <a href="http://bbest.github.io/talks/2014-04-03_R-productivity">http://bbest.github.io/talks/2014-04-03_R-productivity</a></li>
+</ul></li>
 </ul>
-
-<p>Ben Best <a href="mailto:bbest@nceas.ucsb.edu">bbest@nceas.ucsb.edu</a></p></li>
-</ul>
-
-</div>
-
-</section>
-<section data-transition="linear" data-transition-speed="default">
-<h3>Aside: Presentation</h3>
-<div class="slideContent" >
-<p>This presentation was quickly and easily authored in RStudio using Markdown in its R presentation format. Then present in full screen.</p>
-
-<p>See: <a href="http://www.rstudio.com/ide/docs/presentations/overview">RStudio &ndash; Authoring R Presentations</a></p>
 
 </div>
 
