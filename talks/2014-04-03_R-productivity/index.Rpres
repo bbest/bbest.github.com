@@ -1,7 +1,7 @@
 productivity with rstudio
 ====
 author: ben best <bbest@nceas.ucsb.edu>
-date: 2014-04-03 at Westmont College
+date: 2014-04-03 in Santa Barbara, CA USA
 
 overview
 ====
@@ -179,10 +179,11 @@ incremental: true
 github process (2)
 ====
 
-|     | `github.com/[org]/[repo]` (org web)  | `github.com/[user]/[repo]` (user web) |   `~/github/[repo]` (user local) |
-| --- |------------------------  | -------------------------- | -------------- |
-| -> |                          | -> [fork](https://help.github.com/articles/fork-a-repo)            | -> [clone](https://help.github.com/articles/fetching-a-remote)    |
-| <- |  [merge pull request](https://help.github.com/articles/merging-a-pull-request) {admin} <-                           | <- [pull request](Fork & Pull Model) | <- [push](https://github.com/OHI-Science/ohiprep/wiki/Setup#rstudio), <-> [commit](https://github.com/OHI-Science/ohiprep/wiki/Setup#rstudio) |
+| direction | org web                  | user web                   | user local          |
+| --------- | -----------------------  | -------------------------- | ------------------- |
+|           | `github.com/[org]/[repo]`| `github.com/[user]/[repo]` |   `~/github/[repo]` |
+| -> (1x)   |                          | -> [fork](https://help.github.com/articles/fork-a-repo)  | -> [clone](https://help.github.com/articles/fetching-a-remote)    |
+| <- |  [merge](https://help.github.com/articles/merging-a-pull-request) {admin} <- | <- [pull request](https://help.github.com/articles/creating-a-pull-request) | <- [push](https://github.com/OHI-Science/ohiprep/wiki/Setup#rstudio), <-> [commit](https://github.com/OHI-Science/ohiprep/wiki/Setup#rstudio) |
 
 where:
 * `[org]` is an organization (eg ohi-science)

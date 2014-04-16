@@ -10,8 +10,9 @@ incremental: true
 
 1. ocean health index
 1. data flow
+1. data wrangling
 1. distributed development
-  
+    
 what is a healthy ocean?
 ====
 incremental: true
@@ -145,12 +146,16 @@ data wrangling: sql
 
 
 ```r
-bstats <- battingStats()
-
-b <- as.data.frame(tbl(lahman_sqlite(), sql(
-"SELECT nameFirst, nameLast, ROUND(AVG(H/(AB*1.0)), 3) AS avg FROM Batting
+tbl(lahman_sqlite(), sql(
+"SELECT nameFirst, nameLast, 
+  ROUND(AVG(H/(AB*1.0)), 3) AS avg 
+FROM Batting
 JOIN Master USING (playerID)
-WHERE AB > 0 AND ((nameFirst = 'Babe' AND nameLast = 'Ruth') OR (nameFirst = 'Jackie' AND nameLast = 'Robinson')) 
+WHERE AB > 0 AND ((
+  (nameFirst = 'Babe' AND 
+   nameLast = 'Ruth') OR 
+  (nameFirst = 'Jackie' AND 
+   nameLast = 'Robinson')) 
 GROUP BY nameFirst, nameLast
 ORDER BY avg DESC")))
 ```
@@ -166,6 +171,7 @@ data wrangling: dplyr
 Batting %.%
   merge(Master, by='playerID') %.%
   filter(
+    AB > 0 &
     (nameFirst=='Babe' & 
      nameLast =='Ruth') | 
     (nameFirst=='Jackie' & 
@@ -189,10 +195,11 @@ type: prompt
 distributed dev: fork & pull
 ====
 
-|     | `github.com/[org]/[repo]` (org web)  | `github.com/[user]/[repo]` (user web) |   `~/github/[repo]` (user local) |
-| --- |------------------------  | -------------------------- | -------------- |
-| -> |                          | -> [fork](https://help.github.com/articles/fork-a-repo)  | -> [clone](https://help.github.com/articles/fetching-a-remote)    |
-| <- |  [merge](https://help.github.com/articles/merging-a-pull-request) {admin} <- | <- [pull request](Fork & Pull Model) | <- [push](https://github.com/OHI-Science/ohiprep/wiki/Setup#rstudio), <-> [commit](https://github.com/OHI-Science/ohiprep/wiki/Setup#rstudio) |
+| direction | org web                  | user web                   | user local          |
+| --------- | -----------------------  | -------------------------- | ------------------- |
+|           | `github.com/[org]/[repo]`| `github.com/[user]/[repo]` |   `~/github/[repo]` |
+| -> (1x)   |                          | -> [fork](https://help.github.com/articles/fork-a-repo)  | -> [clone](https://help.github.com/articles/fetching-a-remote)    |
+| <- |  [merge](https://help.github.com/articles/merging-a-pull-request) {admin} <- | <- [pull request](https://help.github.com/articles/creating-a-pull-request) | <- [push](https://github.com/OHI-Science/ohiprep/wiki/Setup#rstudio), <-> [commit](https://github.com/OHI-Science/ohiprep/wiki/Setup#rstudio) |
 
 where:
 * `[org]` is an organization (eg `ohi-science`)
@@ -217,10 +224,8 @@ type: sub-section
   - ohicore: r library of core functions
   - ohigui: graphical user interface with shiny and rCharts
 * [github.com/bbest](github.com/bbest) / bbest.github.com / talks
-  - [this talk as r presentation](https://github.com/bbest/bbest.github.com/blob/master/talks/2014-04-03_R-productivity/index.Rpres)
-  - [productivity with rstudio](http://bbest.github.io/talks/2014-04-03_R-productivity/)
-     1. data wrangling with dplyr
-     1. documenting with markdown
-     1. versioning with github
-* other resources:
+  - [this talk](http://bbest.github.io/talks/2014-04-03_R-productivity), as [r presentation](http://bbest.github.io/talks/2014-04-03_R-productivity/index.Rpres)
+  - [productivity with rstudio](http://bbest.github.io/talks/2014-04-03_R-productivity/): 1. data wrangling with dplyr, 2. documenting with markdown, 3. versioning with github
+* other
   - [marwick reproducible research](http://benmarwick.github.io/CSSS-Primer-Reproducible-Research)
+  - [github.com/datasets](http://data.okfn.org/roadmap/core-datasets)
