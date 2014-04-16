@@ -1,7 +1,7 @@
 productivity with rstudio
 ====
 author: ben best <bbest@nceas.ucsb.edu>
-date: 2014-04-03 at Westmont College
+date: 2014-04-03 in Santa Barbara, CA USA
 
 overview
 ====
