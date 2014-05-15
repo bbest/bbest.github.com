@@ -58,7 +58,11 @@ free, cross-platform, open source, web based
     + **backup** to offsite archive, and **rewind** changes
     + **document** changes of code and files with issues and messages
     + **collaborate** with others and **publish** to web site
-    
+
+Products and Processes
+====
+![flow](fig/ohi-tbx_flow.png)
+
 Demo
 ====
 type: section
