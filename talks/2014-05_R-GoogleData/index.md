@@ -82,26 +82,20 @@ Install GFusionTables
 ====
 
 ```r
-# download and unzip
 download.file('http://gfusiontables.lopatenko.com/GFusionTables_1.4.tar.gz', 'GFusionTables_1.4.tar.gz')
 untar('GFusionTables_1.4.tar.gz', compressed='gzip', tar='/usr/bin/tar')
 
-# create NAMESPACE and install
 writeLines('exportPattern("^[^\\\\.]")', 'GFusionTables/NAMESPACE')
 system(paste0("R CMD INSTALL ", getwd(), '/GFusionTables'))
 
-# check
-library(GFusionTables)
-
-# cleanup
+library(GFusionTables) # check
 unlink(c('GFusionTables_1.4.tar.gz','GFusionTables'))
 ```
 
 
 Using GFusionTables
 ====
-But got error
-
+But got error...
 
 ```r
 library(GFusionTables)
@@ -115,17 +109,25 @@ traceback()
 #2: postForm(uri = url, .params = params)
 #1: ft.connect("bbest@nceas.ucsb.edu", passwd)
 # Probably OAuth related, otherwise would like this...
+```
 
-# read table
-d = read.csv('talks/2014-05_R-GoogleData/data/UseR_conf.csv')
+
+If GFusionTables worked...
+====
+
+```r
+library(GFusionTables)
+
+# authenticate
+passwd = scan('~/.gpass', what='character', quiet=T)
+auth <- ft.connect('bbest@nceas.ucsb.edu', passwd)
 
 # write new table
-ft.exportdata(auth, input_frame=d, table_name="test", create_table=TRUE)
+ft.exportdata(auth, input_frame=df, table_name="test", create_table=TRUE)
 
-# List all my tables:
+# list, describe, import
 ft.showtables(auth)
 ft.describetable(auth, "Soil data sources (URLs)")
-
 ft.importdata(auth, "Soil data sources (URLs)")
 ```
 
@@ -134,7 +136,7 @@ ft.importdata(auth, "Soil data sources (URLs)")
 Big Query
 ====
 
-False starts...
+False start #1: dplyr
 
 ```r
 library(bigrquery) # devtools::install_github('hadley/bigrquery')
@@ -152,6 +154,16 @@ batting <- tbl(lahman_bigquery(), "Batting")
 # Press Esc/Ctrl + C to abort
 # Authentication complete.
 # Error: HTTP error [404] Not Found
+```
+
+
+Big Query
+====
+
+False start #2: just bigrquery
+
+```r
+library(bigrquery)
 
 # trying Google sample datasets
 bq_db = src_bigquery('publicdata', 'samples')
@@ -161,7 +173,15 @@ bq_db
 d = tbl(bq_db, 'github_nested')
 # Error in UseMethod("sql_select") : 
 #  no applicable method for 'sql_select' applied to an object of class "bigquery"
+```
 
+
+Big Query
+====
+
+False start #3: bigrquery [sample](https://github.com/hadley/bigrquery#sample-data-and-a-billing-project) after project setup
+
+```r
 # looking at bigrquery suggests billing required
 billing_project <- "341409650721" # put your project number here
 sql <- "SELECT year, month, day, weight_pounds FROM natality LIMIT 5"
@@ -169,4 +189,3 @@ query_exec("publicdata", "samples", sql, billing = billing_project)
 # Error: Access Denied: Job 341409650721:job_pkE0hOVl4E61QKHIBlrOvGL-AY0: RUN_QUERY_JOB
 ```
 
-[bigrquery sample](https://github.com/hadley/bigrquery#sample-data-and-a-billing-project)...

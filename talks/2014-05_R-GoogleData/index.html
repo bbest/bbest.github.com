@@ -894,18 +894,13 @@ print(g)
 <section data-transition="concave" data-transition-speed="fast">
 <h3>Install GFusionTables</h3>
 <div class="slideContent" >
-<pre class="fragment"><code class="r"># download and unzip
-download.file(&#39;http://gfusiontables.lopatenko.com/GFusionTables_1.4.tar.gz&#39;, &#39;GFusionTables_1.4.tar.gz&#39;)
+<pre class="fragment"><code class="r">download.file(&#39;http://gfusiontables.lopatenko.com/GFusionTables_1.4.tar.gz&#39;, &#39;GFusionTables_1.4.tar.gz&#39;)
 untar(&#39;GFusionTables_1.4.tar.gz&#39;, compressed=&#39;gzip&#39;, tar=&#39;/usr/bin/tar&#39;)
 
-# create NAMESPACE and install
 writeLines(&#39;exportPattern(&quot;^[^\\\\.]&quot;)&#39;, &#39;GFusionTables/NAMESPACE&#39;)
 system(paste0(&quot;R CMD INSTALL &quot;, getwd(), &#39;/GFusionTables&#39;))
 
-# check
-library(GFusionTables)
-
-# cleanup
+library(GFusionTables) # check
 unlink(c(&#39;GFusionTables_1.4.tar.gz&#39;,&#39;GFusionTables&#39;))
 </code></pre>
 
@@ -915,7 +910,7 @@ unlink(c(&#39;GFusionTables_1.4.tar.gz&#39;,&#39;GFusionTables&#39;))
 <section data-transition="concave" data-transition-speed="fast">
 <h3>Using GFusionTables</h3>
 <div class="slideContent" >
-<p>But got error</p>
+<p>But got error&hellip;</p>
 
 <pre class="fragment"><code class="r">library(GFusionTables)
 
@@ -928,17 +923,26 @@ traceback()
 #2: postForm(uri = url, .params = params)
 #1: ft.connect(&quot;bbest@nceas.ucsb.edu&quot;, passwd)
 # Probably OAuth related, otherwise would like this...
+</code></pre>
 
-# read table
-d = read.csv(&#39;talks/2014-05_R-GoogleData/data/UseR_conf.csv&#39;)
+</div>
+
+</section>
+<section data-transition="concave" data-transition-speed="fast">
+<h3>If GFusionTables worked...</h3>
+<div class="slideContent" >
+<pre class="fragment"><code class="r">library(GFusionTables)
+
+# authenticate
+passwd = scan(&#39;~/.gpass&#39;, what=&#39;character&#39;, quiet=T)
+auth &lt;- ft.connect(&#39;bbest@nceas.ucsb.edu&#39;, passwd)
 
 # write new table
-ft.exportdata(auth, input_frame=d, table_name=&quot;test&quot;, create_table=TRUE)
+ft.exportdata(auth, input_frame=df, table_name=&quot;test&quot;, create_table=TRUE)
 
-# List all my tables:
+# list, describe, import
 ft.showtables(auth)
 ft.describetable(auth, &quot;Soil data sources (URLs)&quot;)
-
 ft.importdata(auth, &quot;Soil data sources (URLs)&quot;)
 </code></pre>
 
@@ -948,7 +952,7 @@ ft.importdata(auth, &quot;Soil data sources (URLs)&quot;)
 <section data-transition="concave" data-transition-speed="fast">
 <h3>Big Query</h3>
 <div class="slideContent" >
-<p>False starts&hellip;</p>
+<p>False start #1: dplyr</p>
 
 <pre class="fragment"><code class="r">library(bigrquery) # devtools::install_github(&#39;hadley/bigrquery&#39;)
 library(dplyr)
@@ -965,6 +969,17 @@ batting &lt;- tbl(lahman_bigquery(), &quot;Batting&quot;)
 # Press Esc/Ctrl + C to abort
 # Authentication complete.
 # Error: HTTP error [404] Not Found
+</code></pre>
+
+</div>
+
+</section>
+<section data-transition="concave" data-transition-speed="fast">
+<h3>Big Query</h3>
+<div class="slideContent" >
+<p>False start #2: just bigrquery</p>
+
+<pre class="fragment"><code class="r">library(bigrquery)
 
 # trying Google sample datasets
 bq_db = src_bigquery(&#39;publicdata&#39;, &#39;samples&#39;)
@@ -974,15 +989,22 @@ bq_db
 d = tbl(bq_db, &#39;github_nested&#39;)
 # Error in UseMethod(&quot;sql_select&quot;) : 
 #  no applicable method for &#39;sql_select&#39; applied to an object of class &quot;bigquery&quot;
+</code></pre>
 
-# looking at bigrquery suggests billing required
+</div>
+
+</section>
+<section data-transition="concave" data-transition-speed="fast">
+<h3>Big Query</h3>
+<div class="slideContent" >
+<p>False start #3: bigrquery <a href="https://github.com/hadley/bigrquery#sample-data-and-a-billing-project">sample</a> after project setup</p>
+
+<pre class="fragment"><code class="r"># looking at bigrquery suggests billing required
 billing_project &lt;- &quot;341409650721&quot; # put your project number here
 sql &lt;- &quot;SELECT year, month, day, weight_pounds FROM natality LIMIT 5&quot;
 query_exec(&quot;publicdata&quot;, &quot;samples&quot;, sql, billing = billing_project)
 # Error: Access Denied: Job 341409650721:job_pkE0hOVl4E61QKHIBlrOvGL-AY0: RUN_QUERY_JOB
 </code></pre>
-
-<p class="fragment"><a href="https://github.com/hadley/bigrquery#sample-data-and-a-billing-project">bigrquery sample</a>&hellip;</p>
 
 </div>
 
