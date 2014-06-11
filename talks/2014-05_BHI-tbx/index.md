@@ -118,7 +118,6 @@ for (yr in 1980:2014){
 ```
 
 
-
 Outline
 ====
 type: section
