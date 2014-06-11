@@ -299,27 +299,26 @@ Natural Products
 <small>Level of protection of the coast from inundation and erosion compared to the local natural potential</small>
 
 $$
-x_{NP} = \frac{\sum_{p=1}^{N} w_{p} * x_{p}}{N};  
+x_{NP} = \frac{\sum_{p=1}^{N} w_p * x_p}{N};  
 $$
 
 $$
-x_{p} = H_{p} * S_{p};
+x_p = H_p * S_p;
 $$
 
 $$
-S_{p} = 1 - (\frac{E + R}{N})  
+S_p = 1 - (\frac{E + R}{N})  
 $$
 
-
-<small>$wp$ = proportional peak US dollar value of product $p$</small>  
-<small>$xp$ = sustainable-harvest score for product $p$;  
-$Hp$ = harvest yield for product $p$  </small>
-<small>$Sp$ = sustainability of product $p$; </small>
+<small>$w_p$ = proportional peak US dollar value of product $p$</small>  
+<small>$x_p$ = sustainable-harvest score for product $p$;  
+$H_p$ = harvest yield for product $p$  </small>
+<small>$S_p$ = sustainability of product $p$; </small>
 <small>$E$ = exposure term; </small>
 <small>$R$ = risk term</small>
 
 **Global 2013**
-<small>￼products:aquaria fishes, corals, sponges, shells, seaweeds, fish</small>
+<small>￼products:aquaria fishes, corals, sponges, shells, seaweeds, fish oil</small>
 
 **US West Coast**
 
