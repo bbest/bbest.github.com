@@ -201,9 +201,10 @@ install_github('ohi-science/ohicore')
 | <- |  [merge pull request](https://help.github.com/articles/merging-a-pull-request) {admin} <-                           | <- [pull request](Fork & Pull Model) | <- [push](https://github.com/OHI-Science/ohiprep/wiki/Setup#rstudio), <-> [commit](https://github.com/OHI-Science/ohiprep/wiki/Setup#rstudio) |
 
 where:
-* `[org]` is an organization (eg `ohi-science`)
-* `[repo]` is a repository in the orgranization (eg `ohiprep`)
-* `[user]` is your github username (eg `bbest`)
+
+> - `[org]` is an organization (eg `ohi-science`)
+> - `[repo]` is a repository in the orgranization (eg `ohiprep`)
+> - `[user]` is your github username (eg `bbest`)
 
 ## Github Features
 
@@ -384,7 +385,7 @@ Batting %.%
     - ohi-[scenario] for many scenarios: global, brazil, uswest, canada, israel, baltic...
 - this talk as
     - html: http://bbest.github.io/talks/2014-06_OHI-repro-sci/
-    - R markdown: http://github.com/bbest/bbest.github.com/tree/master/talks/2014-06_OHI-repro-sci/index.Rpres
+    - R markdown: http://github.com/bbest/bbest.github.com/tree/master/talks/2014-06_OHI-repro-sci/index.Rmd
 - other
     - [marwick reproducible research](http://benmarwick.github.io/CSSS-Primer-Reproducible-Research)
     - [github.com/datasets](http://data.okfn.org/roadmap/core-datasets)
