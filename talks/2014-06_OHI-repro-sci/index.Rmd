@@ -5,7 +5,7 @@ date: "June 25, 2014"
 output: 
   ioslides_presentation:
     incremental: true
-runtime: shiny
+#runtime: shiny
 ---
 
 ## Why "Reproducible Science" Talk?
@@ -98,7 +98,7 @@ Elfes et al (2014) _PLoS ONE_
 
 ## Toolbox
 
-```{r, echo = FALSE, eval=T}
+```{r, echo = FALSE, eval=F}
 suppressPackageStartupMessages({
   library(shiny)
   library(devtools)
