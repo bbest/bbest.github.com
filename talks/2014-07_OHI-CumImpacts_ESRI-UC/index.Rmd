@@ -1,12 +1,17 @@
 ---
 title: "Toolbox for Cumulative Impacts Analysis and the Ocean Health Index"
 author: "Ben Best (bbest@nceas.ucsb.edu), Shaun Walbridge, Matt Perry, John Potapenko, Darren Hardy, Ben Halpern"
-date: "June 25, 2014"
+date: "ESRI UC in San Diego on July 16, 2014"
 output: 
   ioslides_presentation:
     incremental: true
-runtime: shiny
+# runtime: shiny
 ---
+
+<div class='notes'>
+- really 2 toolboxes
+- 
+</div>
 
 ## Toolboxes Motivated by Papers
 
@@ -98,9 +103,11 @@ $$
 
 - Download Python Toolbox at [github.com/ohi-science/cumimpacts](http://github.com/ohi-science/cumimpacts)
 
-    - Soon linked from [nceas.ucsb.edu/globalmarine](http://www.nceas.ucsb.edu/globalmarine), [ohi-science.org](http://ohi-science.org)
+    - Linked from [ohi-science.org](http://ohi-science.org)
+    
+    - Soon linked from [nceas.ucsb.edu/globalmarine](http://www.nceas.ucsb.edu/globalmarine)
 
-- Update with matrix math for speed up: 2 hours to 2 minutes (Dan Yocum)
+- Update with numpy matrix math for speed up: 2 hours to 20 seconds (Dan Yocum)
 
 # Ocean Health Index
 
@@ -174,12 +181,11 @@ Elfes et al (2014) _PLoS ONE_
 
 ![flow](fig/ohi-tbx_flow_sized.png)
 
+```{r, echo=F, eval=F}
 ## Toolbox
-
-```{r, echo=F, eval=T}
 suppressPackageStartupMessages({
   library(shiny)
-  library(devtools); load_all('~/github/ohicore', quiet=T)
+  library(devtools); load_all('~/github/ohicore', quiet=T) # launch_app('~/github/ohi-global/eez2013')
   #library(ohicore)
   })
 
@@ -192,11 +198,36 @@ shinyAppDir(
     width="100%", height=700))
 ```
 
+## Toolbox: Data | Map
+
+![map](fig/ohitbx_01-map-scores-USAhover.png)
+
+## Toolbox: Data | Histogram
+
+![map](fig/ohitbx_02-hist-scores.png)
+
+## Toolbox: Goals
+
+![map](fig/ohitbx_04-goals.png)
+
+## Toolbox: Calculate
+
+![map](fig/ohitbx_05-calculate.png)
+
+## Toolbox: Report
+
+![map](fig/ohitbx_06-report.png)
+
+## Toolbox: Report -> Result
+
+![map](fig/ohitbx_07-report-result.png)
+
 ## Regionalization Strategy
 
 - examples
     - [Baltic](https://github.com/OHI-Science/ohiprep/tree/master/Baltic/StockholmUniversity-Regions_v2014-04#figure)
     - Israel [biogeographic](https://github.com/ohi-science/ohiprep/tree/master/Israel/Hamaarag-Regions_v2014a#israel-hamaarag-regions_v2014a) and [political](https://github.com/OHI-Science/ohi-israel/wiki/2014.06.11:-notes-from-virtual-meeting-on-regions-and-scenario-files#gadm-of-israel)
+
 - globally
     - political: Global Administrative Areas ([GADM](http://gadm.org/))
     - biogeographic: Marine Ecoregions of the World ([MEOW](http://www.marineregions.org/sources.php#meow))
@@ -208,7 +239,7 @@ shinyAppDir(
 
 ## Scenario files
 
-- layers.csv, layers/
+> - layers.csv, layers/
     + *.csv
 - scenario.R, conf/
     + config.R
