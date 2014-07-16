@@ -5,7 +5,7 @@ date: "June 25, 2014"
 output: 
   ioslides_presentation:
     incremental: true
-runtime: shiny
+# runtime: shiny
 ---
 
 ## Toolboxes Motivated by Papers
@@ -176,7 +176,7 @@ Elfes et al (2014) _PLoS ONE_
 
 ## Toolbox
 
-```{r, echo=F, eval=T}
+```{r, echo=F, eval=F}
 suppressPackageStartupMessages({
   library(shiny)
   library(devtools); load_all('~/github/ohicore', quiet=T)
@@ -278,4 +278,4 @@ install_github('ohi-science/ohicore')
 
 > - bbest@nceas.ucsb.edu
 
-> - [http://bbest.github.io/talks/2014-07_ohi-cumimpacts_esri-uc](bbest.github.io/talks/2014-07_ohi-cumimpacts_esri-uc)
+> - [bbest.github.io/talks/2014-07_ohi-cumimpacts_esri-uc](https://bbest.github.io/talks/2014-07_OHI-CumImpacts_ESRI-UC)
