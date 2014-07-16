@@ -5,7 +5,7 @@ date: "June 25, 2014"
 output: 
   ioslides_presentation:
     incremental: true
-runtime: shiny
+# runtime: shiny
 ---
 
 ## Toolboxes Motivated by Papers
@@ -278,4 +278,4 @@ install_github('ohi-science/ohicore')
 
 > - bbest@nceas.ucsb.edu
 
-> - [http://bbest.github.io/talks/2014-07_ohi-cumimpacts_esri-uc](bbest.github.io/talks/2014-07_ohi-cumimpacts_esri-uc)
+> - [bbest.github.io/talks/2014-07_ohi-cumimpacts_esri-uc](https://bbest.github.io/talks/2014-07_OHI-CumImpacts_ESRI-UC)
