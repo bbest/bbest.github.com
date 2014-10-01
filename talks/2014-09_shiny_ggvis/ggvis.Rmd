@@ -143,9 +143,8 @@ n1$print('rcharts_scatter')
 ## shiny
 
 - http://shiny.rstudio.com/
-
 - http://rmarkdown.rstudio.com/authoring_embedded_shiny.html
-
 - http://rmarkdown.rstudio.com/authoring_shiny.html
-
-- http://shiny.rstudio.com/articles/shinyapps.html
+- [Share Shiny Apps](http://shiny.rstudio.com/tutorial/lesson7/)
+  - http://shiny.rstudio.com/articles/shinyapps.html
+  - https://github.com/rstudio/shiny-server/blob/master/README.md
