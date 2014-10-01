@@ -50,12 +50,13 @@ mtcars %>% ggvis(x = ~wt, y = ~mpg) %>%
 
 ## googleVis scatterplot
 
-Excerpted from http://cran.r-project.org/web/packages/googleVis/vignettes/googleVis.pdf.
+- Excerpted from http://cran.r-project.org/web/packages/googleVis/vignettes/googleVis.pdf.
 
-http://cran.r-project.org/web/packages/googleVis/vignettes/googleVis_examples.html
-http://cran.r-project.org/web/packages/googleVis/vignettes/Using_googleVis_with_knitr.html
+- http://cran.r-project.org/web/packages/googleVis/vignettes/googleVis_examples.html
 
-See [Google Charts Gallery](https://developers.google.com/chart/interactive/docs/gallery).
+- http://cran.r-project.org/web/packages/googleVis/vignettes/Using_googleVis_with_knitr.html
+
+- [Google Charts Gallery](https://developers.google.com/chart/interactive/docs/gallery)
 
 ```{r googleVis scatter, results='asis'}
 suppressPackageStartupMessages(suppressWarnings({
@@ -117,11 +118,11 @@ plot(M, 'chart')
 
 ## rcharts
 
-http://ramnathv.github.io/rCharts/
+- http://ramnathv.github.io/rCharts/
 
-http://rcharts.io/gallery
+- http://rcharts.io/gallery
 
-http://rcharts.io/controls/polychart/index.html
+- http://rcharts.io/controls/polychart/index.html
 
 ```{r rcharts, results='asis', comment = NA, cache = F}
 #devtools::install_github('ramnathv/rCharts')
@@ -141,10 +142,10 @@ n1$print('rcharts_scatter')
 
 ## shiny
 
-http://shiny.rstudio.com/
+- http://shiny.rstudio.com/
 
-http://rmarkdown.rstudio.com/authoring_embedded_shiny.html
+- http://rmarkdown.rstudio.com/authoring_embedded_shiny.html
 
-http://rmarkdown.rstudio.com/authoring_shiny_widgets.html
+- http://rmarkdown.rstudio.com/authoring_shiny_widgets.html
 
-http://rmarkdown.rstudio.com/authoring_shiny.html
+- http://rmarkdown.rstudio.com/authoring_shiny.html
