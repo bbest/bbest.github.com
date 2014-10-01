@@ -85,7 +85,7 @@ plot(Sankey, 'chart')
 
 http://www.r-bloggers.com/googlevis-0-5-5-released/
 
-```{r googleVis motion, results='asis'}
+```{r googleVis motion, results='asis', eval=FALSE}
 # Thanks to John Maindonald
 library(WDI)
 indnams <- c("fertility.rate", "life.expectancy", 
@@ -115,3 +115,36 @@ M <- gvisMotionChart(WorldBank,
 plot(M, 'chart')
 ```
 
+## rcharts
+
+http://ramnathv.github.io/rCharts/
+
+http://rcharts.io/gallery
+
+http://rcharts.io/controls/polychart/index.html
+
+```{r rcharts, results='asis', comment = NA, cache = F}
+#devtools::install_github('ramnathv/rCharts')
+#install.packages('base64enc')
+library(rCharts)
+
+# n1 <- nPlot(mpg ~ wt, data = mtcars, group = "gear", type = "scatterChart")
+# n1$addControls("x", value = "wt", values = names(mtcars))
+# n1$addControls("group", value = "gear", values = names(mtcars))
+# n1$show('inline''inline', include_assets = TRUE, cdn = TRUE)
+
+n1 <- nPlot(mpg ~ wt, data = mtcars, type = 'scatterChart')
+n1$print('rcharts_scatter')
+#n1$show('inline', include_assets = TRUE, cdn = TRUE)
+```
+
+
+## shiny
+
+http://shiny.rstudio.com/
+
+http://rmarkdown.rstudio.com/authoring_embedded_shiny.html
+
+http://rmarkdown.rstudio.com/authoring_shiny_widgets.html
+
+http://rmarkdown.rstudio.com/authoring_shiny.html
